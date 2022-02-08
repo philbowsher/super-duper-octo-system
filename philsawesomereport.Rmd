@@ -8,6 +8,7 @@ These are the packages im using...
 
 ```{r setup}
 library(tidyverse)
+library(plotly)
 
 ```
 
@@ -37,9 +38,12 @@ newdata
 viz the data
 
 ```{r}
-ggplot(newdata) +
+
+p <- ggplot(newdata) +
   aes(x = name, y = n) +
   geom_boxplot(shape = "circle", fill = "#112446") +
   theme_minimal()
+
+ggplotly(p)
 ```
 
